@@ -1,7 +1,7 @@
 import os
 
 def Add(a, b):
-        return a + b
+        return a * b
         
 def Welcome():
         print("Welcome to my Python App!")
