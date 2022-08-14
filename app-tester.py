@@ -2,7 +2,7 @@
 from app import Add
 
 def Tester():
-        assert Add(5,5) == 10
+        assert Add(2,3) == 5
         print("Testing Functions inside app completed successfully")
 
 if __name__ == '__main__':
