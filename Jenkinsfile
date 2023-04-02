@@ -10,6 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                echo 'Build $BUILD_ID is complete' > file.txt
             }
         }
         stage('Test') {
@@ -17,7 +18,13 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
+        stage('Archive the artifacts') {
+            steps {
+                echo 'Archiving....'
+                archiveArtifacts artifacts: 'file.txt', followSymlinks: false, onlyIfSuccessful: true
+            }
+        }
+        stage('Deploying') {
             steps {
                 echo 'Deploying....'
             }
