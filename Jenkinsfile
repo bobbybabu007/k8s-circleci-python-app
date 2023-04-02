@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo 'Build $BUILD_ID is complete' > file.txt
+                sh 'echo \'Build $BUILD_ID is complete\' > file.txt'
             }
         }
         stage('Test') {
